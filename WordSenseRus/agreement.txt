@@ -1,0 +1,3 @@
+PercentageAgreement: 0.906591
+KrippendorffAlphaAgreement: 0.825366
+RandolphKappaAgreement: 0.875454
