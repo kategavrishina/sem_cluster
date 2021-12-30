@@ -29,3 +29,12 @@
 
 Установить модули можно командой:
     pip install requirements.txt
+
+# Оценка бейзлайнов
+Для оценки WSI-бейзлайнов используем метрику [ARI](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html)
+
+| Метод | ARI |
+| --- | ----------- |
+| birch | 0.728 |
+| jamsic | 0.455 |
+
