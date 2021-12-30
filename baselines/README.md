@@ -40,7 +40,7 @@
 
 Для WSD – [Accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
 
-| Метод | ARI |
+| Метод | Accuracy |
 | --- | ----------- |
 | Первый смысл для каждого |  0.635 |
 | Случайный из двух смыслов | 0.498 |
