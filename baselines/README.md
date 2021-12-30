@@ -35,6 +35,12 @@
 
 | Метод | ARI |
 | --- | ----------- |
-| birch | 0.728 |
-| jamsic | 0.455 |
+| Кластеризация Birch | 0.728 |
+| Подход jamsic | 0.455 |
 
+Для WSD – [Accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
+
+| Метод | ARI |
+| --- | ----------- |
+| Первый смысл для каждого |  0.635 |
+| Случайный из двух смыслов | 0.498 |
