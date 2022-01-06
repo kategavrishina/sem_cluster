@@ -1,8 +1,5 @@
 # Репозиторий для проекта "Semantic clusterization", 2021-2022гг.
 
-Бейзлайны:
-1. На основе метода jamsic (Word2Vec)
-2. Кластеризация Birch на два кластера (Word2Vec)
-3. 1c1inst: "выставляем всем первый смысл"
+Бейзлайны представлены в директории [baselines](https://github.com/kategavrishina/sem_cluster/tree/main/baselines)
 
-Данные (russe-wsi-data): все материалы с соревнования RUSSE'2018 по WSI для русского языка
+Данные представлены в директории [russe-wsi-data](https://github.com/kategavrishina/sem_cluster/tree/main/russe-wsi-data): все материалы с соревнования RUSSE'2018 по WSI для русского языка
