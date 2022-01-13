@@ -11,12 +11,15 @@
 
 # Запуск
 Для установки пакетов:
+
 ```pip install -r requirements.txt```
 
 Для запуска выполнить:
+
 ``python main.py [наименование метода] [путь до датасета] --model [путь до модели]``
 
 Пример:
+
 ``python main.py jamsic datasets/wiki-wiki/train.csv --model models/word2vec/model_wiki.bin``
 
 Доступные методы:
