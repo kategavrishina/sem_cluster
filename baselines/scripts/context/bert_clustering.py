@@ -4,7 +4,7 @@ import torch
 from transformers import AutoTokenizer, AutoModel, BertConfig
 from sklearn.metrics import adjusted_rand_score
 from sklearn import preprocessing
-from ..utlis import return_bert_vec
+from ..utils import return_bert_vec
 from sklearn.cluster import Birch
 
 

@@ -1,12 +1,11 @@
-from sklearn.cluster import Birch, KMeans
+from sklearn.cluster import Birch
 import pandas as pd
-from gensim.models import KeyedVectors
 from sklearn.metrics import adjusted_rand_score
-from ..utlis import return_vec
+from ..utils import load_embedding, return_vec
 
 
 def run_birch_baseline(path_to_dataset: str, path_to_model: str):
-    model = KeyedVectors.load_word2vec_format(path_to_model, binary=True)
+    model = load_embedding(path_to_model)
     dataset = pd.read_csv(path_to_dataset, sep='\t')
     result = pd.DataFrame()
 

@@ -2,7 +2,7 @@ import argparse
 import os
 import sys
 from scripts.naive.naive_baseline import run_all_naive_baselines
-from scripts.static.birch_clusterting import run_birch_baseline
+from scripts.static.birch_clustering import run_birch_baseline
 from scripts.static.jamsic_method import run_jamsic_baseline
 from scripts.context.bert_clustering import run_bert_baseline
 

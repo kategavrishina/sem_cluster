@@ -2,7 +2,7 @@ from scipy.spatial.distance import cosine
 from gensim.models import KeyedVectors
 import pandas as pd
 from sklearn.metrics import adjusted_rand_score
-from ..utlis import return_vec
+from ..utils import load_embedding, return_vec
 from pymystem3 import Mystem
 
 ms = Mystem()
@@ -34,13 +34,14 @@ def compare_vecs(vector, first_sense_vec, second_sense_vec):
 
 
 def run_jamsic_baseline(path_to_dataset: str, path_to_model: str):
-    model = KeyedVectors.load_word2vec_format(path_to_model, binary=True)
+    model = load_embedding(path_to_model)
     dataset = pd.read_csv(path_to_dataset, sep='\t')
     result = pd.DataFrame()
     for word in dataset['word'].unique():
         part = dataset[dataset['word'] == word].copy()
         part['vector'] = part['context'].apply(return_vec, model=model)
         fsv, ssv = get_senses_vecs(word, model)
-        part['cluster'] = part['vector'].apply(compare_vecs, first_sense_vec=fsv, second_sense_vec=ssv)
+        part['cluster'] = part['vector'].apply(
+            compare_vecs, first_sense_vec=fsv, second_sense_vec=ssv)
         result = result.append(part)
     print(f"ARI jamsic method: {adjusted_rand_score(result['cluster'], result['gold_sense_id'])}")
