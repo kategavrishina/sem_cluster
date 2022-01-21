@@ -41,7 +41,9 @@
 | --- | ----------- |
 | Кластеризация Birch | 0.728 |
 | Подход jamsic | 0.455 |
-| Кластеризация BERT | 0.185 |
+| Кластеризация BERT* | 0.185 |
+
+\* В качестве бейзлайна BERT использовалась модель sberbank-ai/sbert_large_nlu_ru
 
 Для WSD – ARI и [Accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
 Для оценки метода "Случайный из двух смыслов" вычислены средние метрики из трёх запусков метода
