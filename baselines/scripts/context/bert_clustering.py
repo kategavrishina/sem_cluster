@@ -5,7 +5,6 @@ from transformers import AutoTokenizer, AutoModel, BertConfig
 from sklearn.metrics import adjusted_rand_score
 from sklearn import preprocessing
 from ..utils import return_bert_vec
-from sklearn.cluster import Birch
 
 
 def run_bert_baseline(path_to_dataset: str, model_name: str):

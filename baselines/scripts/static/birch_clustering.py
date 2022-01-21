@@ -15,4 +15,5 @@ def run_birch_baseline(path_to_dataset: str, path_to_model: str):
         birch = Birch(n_clusters=2, threshold=0.1).fit(list(part['vector']))
         part['cluster'] = birch.labels_
         result = result.append(part)
+    print(result)
     print(f"ARI Birch clustering: {adjusted_rand_score(result['cluster'], result['gold_sense_id'])}")

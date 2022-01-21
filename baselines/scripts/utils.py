@@ -42,9 +42,9 @@ def load_embedding(modelfile):
         #  If you intend to train the model further:
         # emb_model = gensim.models.Word2Vec.load(embeddings_file)
     # Unit-normalizing the vectors (if they aren't already):
-    emb_model.init_sims(
-        replace=True
-    )
+    #emb_model.init_sims(
+    #    replace=True
+    #)
     return emb_model
 
 
