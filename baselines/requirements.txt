@@ -31,4 +31,5 @@ typing-extensions==4.0.1
 urllib3==1.26.7
 zipp==3.6.0
 ufal.udpipe==1.2.0.3
+umap-learn==0.5.2
 wget==3.2
