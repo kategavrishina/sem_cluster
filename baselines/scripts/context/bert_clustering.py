@@ -15,6 +15,7 @@ def run_bert_baseline(path_to_dataset: str, model_name: str):
 
     dataset = pd.read_csv(path_to_dataset, sep='\t')
     result = pd.DataFrame()
+    ari = []
 
     for word in dataset['word'].unique():
         part = dataset[dataset['word'] == word].copy()
@@ -22,5 +23,7 @@ def run_bert_baseline(path_to_dataset: str, model_name: str):
         clst = KMeans(n_clusters=2, random_state=40).fit(preprocessing.normalize(list(part['vector'])))
         part['predict_sense_id'] = clst.labels_
         result = result.append(part)
-    print(result['predict_sense_id'].value_counts())
-    print(f"ARI BERT clustering: {adjusted_rand_score(result['predict_sense_id'], result['gold_sense_id'])}")
+        ari.append(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']))
+        print(f"Word: {word}, ARI: {round(adjusted_rand_score(part['cluster'], part['gold_sense_id']), 2)}")
+    # print(result['predict_sense_id'].value_counts())
+    print(f"Average ARI Bert clustering: {round(np.mean(ari), 2)}\n")
