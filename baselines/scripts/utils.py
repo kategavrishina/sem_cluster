@@ -4,6 +4,12 @@ import numpy as np
 from .preprocessing_udpipe import udpipe_preprocessor
 import gensim
 import zipfile
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import StandardScaler
+import umap.umap_ as umap
+sns.set()
+
 
 russian_stops = stopwords.words('russian')
 morph = MorphAnalyzer()
@@ -51,13 +57,11 @@ def load_embedding(modelfile):
 def return_vec(string: str, model: gensim.models.KeyedVectors):
     vec = [0.0] * 300
     length = 0
-    TEST = []
     for token in udpipe_preprocessor(string):
         if token.split('_')[0] not in russian_stops:
             try:
                 vec += model[token]
             except KeyError:
-                TEST.append(token)
                 continue
         length += 1
     if np.isnan(np.array(vec) / length).any():
@@ -142,3 +146,16 @@ def return_bert_avg_vec(dframe, model, tokenizer, device):
         word_average.append(word_embedding[0])
 
     return word_average[0]
+
+
+def make_picture(data, method):
+    shapes = [(0, 0), (0, 1), (1, 0), (1, 1)]
+    figs, axs = plt.subplots(2, 2, figsize=(20, 20))
+    for word, shape in zip(data['word'].unique(), shapes):
+        sub = data[data['word'] == word].copy()
+        reducer = umap.UMAP()
+        Y = reducer.fit_transform(StandardScaler().fit_transform(list(sub['vector'])))
+        sns.scatterplot(x=Y[:, 0], y=Y[:, 1], ax=axs[shape[0], shape[1]], s=100, hue=sub['gold_sense_id'],
+                        style=sub['predict_sense_id'])
+        axs[shape[0], shape[1]].set_title(word)
+    plt.savefig(f'{method}_visualization.png')
