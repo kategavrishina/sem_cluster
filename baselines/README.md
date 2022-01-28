@@ -17,13 +17,15 @@
 ``python main.py [наименование метода] [путь до датасета] --model [путь до модели]``
 
 Пример:
-``python main.py jamsic datasets/wiki-wiki/train.csv --model models/word2vec/model_wiki.bin``
+``python main.py jamsic datasets/wiki-wiki/train.csv --model models/word2vec/model_wiki.bin --visualize``
 
 Доступные методы:
 - birch
 - jamsic
 - naive (все наивные бейзлайны, для них указывать модель не нужно)
 - bert (при выборе этого бейзлайна укажите в аргументе model название модели в huggingface)
+
+Аргумент --visualize необязательный. В случае добавления сохраняет визуализацию итоговой кластеризации.
 
 # Описание файлов и директорий:
 - datasets: загруженные датасеты из RUSSE'2018
