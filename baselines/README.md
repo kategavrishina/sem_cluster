@@ -100,11 +100,11 @@
 
 | Метод | ARI |
 | --- | ----------- |
+| Кластеризация BERT* | 0.732 |
 | Кластеризация Birch | 0.728 |
 | Подход jamsic | 0.455 |
-| Кластеризация BERT* | 0.185 |
 
-\* В качестве бейзлайна BERT использовалась модель sberbank-ai/sbert_large_nlu_ru
+\* В качестве бейзлайна BERT использовалась модель sberbank-ai/sbert_large_nlu_ru, алгоритм кластеризации KMeans
 
 Для WSD – ARI и [Accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
 
