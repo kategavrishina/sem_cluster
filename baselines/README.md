@@ -97,11 +97,14 @@
 | ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.3 | лук | 0.47 |
 | ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.3 | суда | -0.09 |
 | ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.3 | бор | 0.63 |
-
+| rsberbank-ai/sbert_large_nlu_ru | KMeans | 0.74 | замок | 0.94 |
+| sberbank-ai/sbert_large_nlu_ru | KMeans | 0.74 | лук | 0.82 |
+| sberbank-ai/sbert_large_nlu_ru| KMeans | 0.74 | суда | 0.39 |
+| sberbank-ai/sbert_large_nlu_ru | KMeans | 0.74 | бор | 0.79 |
 
 | Метод | ARI |
 | --- | ----------- |
-| Кластеризация BERT* | 0.732 |
+| Кластеризация BERT* | 0.74 |
 | Кластеризация Birch | 0.728 |
 | Подход jamsic | 0.455 |
 
