@@ -34,6 +34,9 @@ def main():
         print(f"No such method: {args.method}", file=sys.stderr)
         exit(-1)
     if args.visualize:
+        if args.method == 'naive':
+            print(f"Can't visualize for naive", file=sys.stderr)
+            exit(-1)
         make_picture(out, args.method)
 
 

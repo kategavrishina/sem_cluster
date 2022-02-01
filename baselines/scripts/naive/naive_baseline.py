@@ -10,10 +10,10 @@ def first_sense(dataset: pd.DataFrame):
     print("First sense for each")
     for word in dataset['word'].unique():
         part = dataset[dataset['word'] == word].copy()
-        part['dummy_pred'] = [1] * len(part)
-        ari.append(adjusted_rand_score(part['dummy_pred'], part['gold_sense_id']))
-        accuracy.append(accuracy_score(part['dummy_pred'], part['gold_sense_id']))
-        print(f"Word: {word}, Accuracy: {round(accuracy_score(part['dummy_pred'], part['gold_sense_id']), 2)} ARI: {round(adjusted_rand_score(part['dummy_pred'], part['gold_sense_id']), 2)}")
+        part['predict_sense_id'] = [1] * len(part)
+        ari.append(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']))
+        accuracy.append(accuracy_score(part['predict_sense_id'], part['gold_sense_id']))
+        print(f"Word: {word}, Accuracy: {round(accuracy_score(part['predict_sense_id'], part['gold_sense_id']), 2)} ARI: {round(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']), 2)}")
     print(f"Average Accuracy: {np.mean(accuracy)}\nAverage ARI: {np.mean(ari)}\n")
 
 
@@ -23,10 +23,10 @@ def random_sense(dataset: pd.DataFrame):
     print("Random sense")
     for word in dataset['word'].unique():
         part = dataset[dataset['word'] == word].copy()
-        part['random_pred'] = [np.random.randint(1, 3) for _ in range(len(part))]
-        ari.append(adjusted_rand_score(part['random_pred'], part['gold_sense_id']))
-        accuracy.append(accuracy_score(part['random_pred'], part['gold_sense_id']))
-        print(f"Word: {word}, Accuracy: {round(accuracy_score(part['random_pred'], part['gold_sense_id']), 2)} ARI: {round(adjusted_rand_score(part['random_pred'], part['gold_sense_id']), 2)}")
+        part['predict_sense_id'] = [np.random.randint(1, 3) for _ in range(len(part))]
+        ari.append(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']))
+        accuracy.append(accuracy_score(part['predict_sense_id'], part['gold_sense_id']))
+        print(f"Word: {word}, Accuracy: {round(accuracy_score(part['predict_sense_id'], part['gold_sense_id']), 2)} ARI: {round(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']), 2)}")
     print(f"Average Accuracy: {np.mean(accuracy)}\nAverage ARI: {np.mean(ari)}\n")
 
 
