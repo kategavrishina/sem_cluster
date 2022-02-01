@@ -30,11 +30,12 @@
 # Описание файлов и директорий:
 - datasets: загруженные датасеты из RUSSE'2018
 - scripts: реализации бейзлайнов
+- visualizations: визуализации кластеризаций бейзлайнов, основанных на векторах
 - main.py: файл для запуска бейзлайнов
 - requirements.txt: модули, необходимые для работы
 
 Установить модули можно командой:
-    pip install requirements.txt
+    pip install -r requirements.txt
 
 # Оценка бейзлайнов
 Для оценки WSI-бейзлайнов используем метрику [ARI](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html)
