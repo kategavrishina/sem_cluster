@@ -41,74 +41,52 @@
 Для оценки WSI-бейзлайнов используем метрику [ARI](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html)
 | Модель | Метод | Средний ARI | Слово | ARI |
 |--------|-------|-------------|-------|-----|
-| ruscorpora_upos_cbow_300_20_2019| Birch | 0.57 | замок | 0.2 |
-| ruscorpora_upos_cbow_300_20_2019| Birch | 0.57 | лук | 0.82 |
-| ruscorpora_upos_cbow_300_20_2019| Birch | 0.57 | суда | 0.24 |
-| ruscorpora_upos_cbow_300_20_2019| Birch | 0.57 | бор | 1.0 |
-| ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.22 | замок | 0.12 |
-| ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.22 | лук | 0.58 |
-| ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.22 | суда | -0.01 |
-| ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.22 | бор | 0.21 |
-| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.73 | замок | 0.79 |
-| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.73 | лук | 0.93 |
-| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.73 | суда | 0.2 |
-| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.73 | бор | 1.0 |
-| ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.32 | замок | -0.02 |
-| ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.32 | лук | 0.86 |
-| ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.32 | суда | 0.13 |
-| ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.32 | бор | 0.32 |
-| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Birch | 0.75 | замок | 0.79 |
-| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Birch | 0.75 | лук | 1.0 |
-| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Birch | 0.75 | суда | 0.2 |
-| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Birch | 0.75 | бор | 1.0 |
-| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Jamsic | 0.47 | замок | -0.8 |
-| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Jamsic | 0.47 | лук | 0.82 |
-| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Jamsic | 0.47 | суда | 0.15 |
-| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Jamsic | 0.47 | бор | 1.0 |
-| news_upos_skipgram_300_5_2019 | Birch | 0.46 | замок | 0.02 |
-| news_upos_skipgram_300_5_2019 | Birch | 0.46 | лук | 0.93 |
-| news_upos_skipgram_300_5_2019 | Birch | 0.46 | суда | 0.24 |
-| news_upos_skipgram_300_5_2019 | Birch | 0.46 | бор | 0.66 |
-| news_upos_skipgram_300_5_2019 | Jamsic | 0.15 | замок | 0.12 |
-| news_upos_skipgram_300_5_2019 | Jamsic | 0.15 | лук | 0.37 |
-| news_upos_skipgram_300_5_2019 | Jamsic | 0.15 | суда | 0.17 |
+| ruscorpora_upos_cbow_300_20_2019| Birch | 0.69 | замок | 0.19 |
+| ruscorpora_upos_cbow_300_20_2019| Birch | 0.69 | лук | 0.89 |
+| ruscorpora_upos_cbow_300_20_2019| Birch | 0.69 | бор | 1.0 |
+| ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.3 | замок | 0.12 |
+| ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.3 | лук | 0.56 |
+| ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.3 | бор | 0.21 |
+| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | замок | 0.79 |
+| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | лук | 1.9 |
+| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | бор | 1.0 |
+| ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.41 | замок | -0.02 |
+| ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.41 | лук | 0.92 |
+| ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.41 | бор | 0.32 |
+| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Birch | 0.93 | замок | 0.79 |
+| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Birch | 0.93 | лук | 1.0 |
+| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Birch | 0.93 | бор | 1.0 |
+| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Jamsic | 0.58 | замок | -0.08 |
+| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Jamsic | 0.58 | лук | 0.82 |
+| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | Jamsic | 0.58 | бор | 1.0 |
+| news_upos_skipgram_300_5_2019 | Birch | 0.54 | замок | 0.02 |
+| news_upos_skipgram_300_5_2019 | Birch | 0.54 | лук | 0.92 |
+| news_upos_skipgram_300_5_2019 | Birch | 0.54 | бор | 0.66 |
+| news_upos_skipgram_300_5_2019 | Jamsic | 0.15 | замок | 0.11 |
+| news_upos_skipgram_300_5_2019 | Jamsic | 0.15 | лук | 0.42 |
 | news_upos_skipgram_300_5_2019 | Jamsic | 0.15 | бор | -0.07 |
-| tayga_upos_skipgram_300_2_2019 | Birch | 0.53 | замок | 0.02 |
-| tayga_upos_skipgram_300_2_2019 | Birch | 0.53 | лук | 1.0 |
-| tayga_upos_skipgram_300_2_2019 | Birch | 0.53 | суда | 0.09 |
-| tayga_upos_skipgram_300_2_2019 | Birch | 0.53 | бор | 1.0 |
-| tayga_upos_skipgram_300_2_2019 | Jamsic | 0.48 | замок | 0.09 |
-| tayga_upos_skipgram_300_2_2019 | Jamsic | 0.48 | лук | 0.7 |
-| tayga_upos_skipgram_300_2_2019 | Jamsic | 0.48 | суда | 0.91 |
-| tayga_upos_skipgram_300_2_2019 | Jamsic | 0.48 | бор | 0.24 |
-| tayga-func_upos_skipgram_300_5_2019 | Birch | 0.54 | замок | 0.2 |
-| tayga-func_upos_skipgram_300_5_2019 | Birch | 0.54 | лук | 0.42 |
-| tayga-func_upos_skipgram_300_5_2019 | Birch | 0.54 | суда | 0.24 |
-| tayga-func_upos_skipgram_300_5_2019 | Birch | 0.54 | бор | 0.79 |
-| tayga-func_upos_skipgram_300_5_2019 | Jamsic | 0.56 | замок | 0.18 |
-| tayga-func_upos_skipgram_300_5_2019 | Jamsic | 0.56 | лук | 0.47 |
-| tayga-func_upos_skipgram_300_5_2019 | Jamsic | 0.56 | суда | -0.09 |
-| tayga-func_upos_skipgram_300_5_2019 | Jamsic | 0.56 | бор | 0.63 |
-| ruwikiruscorpora_upos_cbow_300_10_2021 | Birch | 0.41 | замок | 0.2 |
-| ruwikiruscorpora_upos_cbow_300_10_2021 | Birch | 0.41 | лук | 0.42 |
-| ruwikiruscorpora_upos_cbow_300_10_2021 | Birch | 0.41 | суда | 0.24 |
-| ruwikiruscorpora_upos_cbow_300_10_2021 | Birch | 0.41 | бор | 0.79 |
-| ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.3 | замок | 0.18 |
-| ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.3 | лук | 0.47 |
-| ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.3 | суда | -0.09 |
-| ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.3 | бор | 0.63 |
-| rsberbank-ai/sbert_large_nlu_ru | KMeans | 0.74 | замок | 0.94 |
-| sberbank-ai/sbert_large_nlu_ru | KMeans | 0.74 | лук | 0.82 |
-| sberbank-ai/sbert_large_nlu_ru| KMeans | 0.74 | суда | 0.39 |
-| sberbank-ai/sbert_large_nlu_ru | KMeans | 0.74 | бор | 0.79 |
-
-| Метод | ARI |
-| --- | ----------- |
-| Кластеризация BERT* | 0.74 |
-| Кластеризация Birch | 0.728 |
-| Подход jamsic | 0.455 |
-
-\* В качестве бейзлайна BERT использовалась модель sberbank-ai/sbert_large_nlu_ru, алгоритм кластеризации KMeans
+| tayga_upos_skipgram_300_2_2019 | Birch | 0.67 | замок | 0.02 |
+| tayga_upos_skipgram_300_2_2019 | Birch | 0.67 | лук | 1.0 |
+| tayga_upos_skipgram_300_2_2019 | Birch | 0.67 | бор | 1.0 |
+| tayga_upos_skipgram_300_2_2019 | Jamsic | 0.36 | замок | 0.1 |
+| tayga_upos_skipgram_300_2_2019 | Jamsic | 0.36 | лук | 0.75 |
+| tayga_upos_skipgram_300_2_2019 | Jamsic | 0.36 | бор | 0.24 |
+| tayga-func_upos_skipgram_300_5_2019 | Birch | 0.81 | замок | 0.43 |
+| tayga-func_upos_skipgram_300_5_2019 | Birch | 0.81 | лук | 1.0 |
+| tayga-func_upos_skipgram_300_5_2019 | Birch | 0.81 | бор | 1.0 |
+| tayga-func_upos_skipgram_300_5_2019 | Jamsic | 0.47 | замок | 0.05 |
+| tayga-func_upos_skipgram_300_5_2019 | Jamsic | 0.47 | лук | 0.65 |
+| tayga-func_upos_skipgram_300_5_2019 | Jamsic | 0.47 | бор | 0.71 |
+| ruwikiruscorpora_upos_cbow_300_10_2021 | Birch | 0.43 | замок | 0.1 |
+| ruwikiruscorpora_upos_cbow_300_10_2021 | Birch | 0.43 | лук | 0.4 |
+| ruwikiruscorpora_upos_cbow_300_10_2021 | Birch | 0.43 | бор | 0.79 |
+| ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.42 | замок | 0.17 |
+| ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.42 | лук | 0.45 |
+| ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.42 | бор | 0.63 |
+| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.74 | замок | 0.94 |
+| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.74 | лук | 0.82 |
+| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.74 | суда | 0.39 |
+| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.74 | бор | 0.79 |
 
 Для WSD – ARI и [Accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
 
