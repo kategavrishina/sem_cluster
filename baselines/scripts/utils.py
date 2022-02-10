@@ -8,8 +8,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 import umap.umap_ as umap
-sns.set()
+from sklearn.manifold import TSNE
+import plotly.express as px
 
+sns.set()
 
 russian_stops = stopwords.words('russian')
 morph = MorphAnalyzer()
@@ -67,7 +69,7 @@ def return_vec(string: str, model: gensim.models.KeyedVectors):
     if np.isnan(np.array(vec) / length).any():
         print(string)
         return [0.0] * 300
-    return np.array(vec) / length
+    return list(np.array(vec) / length)
 
 
 def return_bert_single_vec(dframe, model, tokenizer, device):
@@ -159,3 +161,46 @@ def make_picture(data, method):
                         style=sub['predict_sense_id'])
         axs[shape[0], shape[1]].set_title(word)
     plt.savefig(f'{method}_visualization.png')
+
+
+def format_str(df):
+    string = df['context']
+    target_word = df['word']
+    ret = []
+    i = 0
+    processed_string = []
+    for word in string.split():
+        if word == target_word:
+            processed_string.append('<b>')
+            processed_string.append(word)
+            processed_string.append('</b>')
+        else:
+            processed_string.append(word)
+    for word in processed_string:
+        if i == 12:
+            ret.append('<br>')
+            i = 0
+        i += 1
+        ret.append(word)
+    return " ".join(ret)
+
+
+def make_html_picture(df, method):
+    df['format_context'] = df.apply(format_str, axis=1)
+    df['gold_sense_id'] = df['gold_sense_id'].astype(str)
+    df['predict_sense_id'] = df['predict_sense_id'].astype(str)
+
+    tsne = TSNE(n_components=2, init='pca').fit_transform(list(df['vector']))
+    df['tsne_x'] = [el[0] for el in tsne]
+    df['tsne_y'] = [el[1] for el in tsne]
+
+    fig = px.scatter(df,
+                     x="tsne_x",
+                     y="tsne_y",
+                     color="gold_sense_id",
+                     facet_col='word',
+                     symbol='predict_sense_id',
+                     text='format_context')
+
+    fig.update_traces(mode="markers", hovertemplate=None)
+    fig.write_html(f'visualizations/{method}_visualization.html')
