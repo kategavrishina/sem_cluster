@@ -5,7 +5,7 @@ from scripts.naive.naive_baseline import run_all_naive_baselines
 from scripts.static.birch_clustering import run_birch_baseline
 from scripts.static.jamsic_method import run_jamsic_baseline
 from scripts.context.bert_clustering import run_bert_baseline
-from scripts.utils import make_picture
+from scripts.utils import make_picture, make_html_picture
 
 
 def main():
@@ -37,7 +37,8 @@ def main():
         if args.method == 'naive':
             print(f"Can't visualize for naive", file=sys.stderr)
             exit(-1)
-        make_picture(out, args.method)
+        make_html_picture(out, args.method)
+        # out.to_csv('result_example.csv')
 
 
 if __name__ == '__main__':
