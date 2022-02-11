@@ -1,4 +1,3 @@
-# from pymorphy2 import MorphAnalyzer
 from nltk.corpus import stopwords
 import numpy as np
 from .preprocessing_udpipe import udpipe_preprocessor
@@ -14,7 +13,6 @@ import plotly.express as px
 sns.set()
 
 russian_stops = stopwords.words('russian')
-# morph = MorphAnalyzer()
 cached_dict = dict()
 
 
