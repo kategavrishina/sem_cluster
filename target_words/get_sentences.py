@@ -5,10 +5,13 @@ import sys
 import pandas as pd
 from smart_open import open
 import json
+import os
+from tqdm import tqdm
 
 targetlistfile = sys.argv[1]
 corpusfile = sys.argv[2]
-identifier = sys.argv[3]
+directory = sys.argv[3]
+identifier = sys.argv[4]
 
 targets = {}
 
@@ -21,7 +24,7 @@ for line in lines:
 
 print(f"{len(targets)} target words to extract", file=sys.stderr)
 
-corpus = pd.read_csv(corpusfile, index_col="ID", keep_default_na=False)
+corpus = pd.read_csv(corpusfile, encoding='utf-8', compression='gzip', index_col="ID", keep_default_na=False)
 
 for idx, lemmas, raw in corpus[["LEMMAS", "RAW"]].itertuples():
     text = raw.strip()
@@ -32,7 +35,11 @@ for idx, lemmas, raw in corpus[["LEMMAS", "RAW"]].itertuples():
         if target in bag_of_lemmas:
             targets[target].append([split_lemmas, text])
 
-for target in targets:
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+os.chdir(directory)
+for target in tqdm(targets):
     print(f"{target}: {len(targets[target])} examples found", file=sys.stderr)
     outfilename = f"{identifier}_{target}.json.gz"
     with open(outfilename, "w") as f:
