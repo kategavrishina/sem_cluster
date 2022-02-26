@@ -13,14 +13,14 @@
 
 1. target_words.py
 2. get_sentences.py
-
-Пример вызова: `python3 get_sentences.py target_words.tsv corpus.csv.gz word_examples example`
+   
+   Пример вызова: `python3 get_sentences.py target_words.tsv corpus.csv.gz word_examples example`
 3. json2durel.py
-
-Пример вызова: `python3 json2durel.py word_examples 22 durel_files`
+   
+   Пример вызова: `python3 json2durel.py word_examples 22 durel_files`
 4. durel_sample.py
-
-Пример вызова: `python3 durel_sample.py durel_files 35 durel_sample`
+   
+   Пример вызова: `python3 durel_sample.py durel_files 35 durel_sample`
 
 
 
