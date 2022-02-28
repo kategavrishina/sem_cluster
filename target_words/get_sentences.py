@@ -38,10 +38,9 @@ for idx, lemmas, raw in corpus[["LEMMAS", "RAW"]].itertuples():
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-os.chdir(directory)
 for target in tqdm(targets):
     print(f"{target}: {len(targets[target])} examples found", file=sys.stderr)
     outfilename = f"{identifier}_{target}.json.gz"
-    with open(outfilename, "w") as f:
+    with open(os.path.join(directory, outfilename), "w") as f:
         out = json.dumps(targets[target], ensure_ascii=False, indent=4)
         f.write(out)
