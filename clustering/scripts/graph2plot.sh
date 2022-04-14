@@ -19,7 +19,6 @@ styles=("interactive")
 modes=("full")
 edgestyles=("judgments")
 colors=("colorful")
-threshold=0.5
 isspring="True"
 mkdir -p $outdir
 
