@@ -5,7 +5,7 @@ import numpy as np
 from transformers import AutoTokenizer, AutoModel, BertConfig
 from sklearn.metrics import adjusted_rand_score
 from sklearn import preprocessing
-from ..utils import return_bert_single_vec
+from ..utils import return_bert_single_vec, return_bert_avg_vec
 
 
 def run_bert_baseline(path_to_dataset: str, model_name: str):
@@ -21,6 +21,7 @@ def run_bert_baseline(path_to_dataset: str, model_name: str):
     for word in dataset['word'].unique():
         part = dataset[dataset['word'] == word].copy()
         part['vector'] = part.apply(return_bert_single_vec, model=model, tokenizer=tokenizer, device=device, axis=1)
+        # print(part['vector'], part['context'])
         clst = KMeans(n_clusters=2, random_state=40).fit(preprocessing.normalize(list(part['vector'])))
         part['predict_sense_id'] = clst.labels_
         result = result.append(part)
