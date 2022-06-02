@@ -48,7 +48,7 @@
 | ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.3 | лук | 0.56 |
 | ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.3 | бор | 0.21 |
 | ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | замок | 0.79 |
-| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | лук | 1.9 |
+| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | лук | 1.0 |
 | ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | бор | 1.0 |
 | ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.41 | замок | -0.02 |
 | ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.41 | лук | 0.92 |
