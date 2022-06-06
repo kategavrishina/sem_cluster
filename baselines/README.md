@@ -48,7 +48,7 @@
 | ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.3 | лук | 0.56 |
 | ruscorpora_upos_cbow_300_20_2019| Jamsic | 0.3 | бор | 0.21 |
 | ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | замок | 0.79 |
-| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | лук | 1.9 |
+| ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | лук | 1.0 |
 | ruwikiruscorpora_upos_skipgram_300_2_2019 | Birch | 0.93 | бор | 1.0 |
 | ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.41 | замок | -0.02 |
 | ruwikiruscorpora_upos_skipgram_300_2_2019 | Jamsic | 0.41 | лук | 0.92 |
@@ -83,10 +83,9 @@
 | ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.42 | замок | 0.17 |
 | ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.42 | лук | 0.45 |
 | ruwikiruscorpora_upos_cbow_300_10_2021 | Jamsic | 0.42 | бор | 0.63 |
-| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.74 | замок | 0.94 |
-| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.74 | лук | 0.82 |
-| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.74 | суда | 0.39 |
-| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.74 | бор | 0.79 |
+| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.85 | замок | 0.94 |
+| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.85 | лук | 0.82 |
+| sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.85 | бор | 0.79 |
 
 Для WSD – ARI и [Accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
 
