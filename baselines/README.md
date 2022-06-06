@@ -86,6 +86,9 @@
 | sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.85 | замок | 0.94 |
 | sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.85 | лук | 0.82 |
 | sberbank-ai/sbert_large_nlu_ru | BERT KMeans | 0.85 | бор | 0.79 |
+| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | EGVI | 0.59 | замок | 0.82 |
+| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | EGVI | 0.59 | лук | 0.43 |
+| ruwikiruscorpora-func_upos_skipgram_300_5_2019 | EGVI | 0.59 | бор | 0.51 |
 
 Для WSD – ARI и [Accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
 
