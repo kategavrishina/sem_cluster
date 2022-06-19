@@ -10,7 +10,7 @@ def first_sense(dataset: pd.DataFrame):
     print("First sense for each")
     for word in dataset['word'].unique():
         part = dataset[dataset['word'] == word].copy()
-        part['predict_sense_id'] = [1] * len(part)
+        part['predict_sense_id'] = [0] * len(part)
         ari.append(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']))
         accuracy.append(accuracy_score(part['predict_sense_id'], part['gold_sense_id']))
         print(f"Word: {word}, Accuracy: {round(accuracy_score(part['predict_sense_id'], part['gold_sense_id']), 2)} ARI: {round(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']), 2)}")
@@ -23,7 +23,7 @@ def random_sense(dataset: pd.DataFrame):
     print("Random sense")
     for word in dataset['word'].unique():
         part = dataset[dataset['word'] == word].copy()
-        part['predict_sense_id'] = [np.random.randint(1, 3) for _ in range(len(part))]
+        part['predict_sense_id'] = [np.random.randint(0, 2) for _ in range(len(part))]
         ari.append(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']))
         accuracy.append(accuracy_score(part['predict_sense_id'], part['gold_sense_id']))
         print(f"Word: {word}, Accuracy: {round(accuracy_score(part['predict_sense_id'], part['gold_sense_id']), 2)} ARI: {round(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']), 2)}")

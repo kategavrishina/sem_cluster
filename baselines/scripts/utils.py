@@ -65,7 +65,7 @@ def return_vec(string: str, model: gensim.models.KeyedVectors):
                 continue
         length += 1
     if np.isnan(np.array(vec) / length).any():
-        print(string)
+        # print(string)
         return [0.0] * 300
     return list(np.array(vec) / length)
 

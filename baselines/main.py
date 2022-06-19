@@ -3,6 +3,7 @@ import os
 import sys
 from scripts.naive.naive_baseline import run_all_naive_baselines
 from scripts.static.birch_clustering import run_birch_baseline
+from scripts.graph.egvi_clustering import run_egvi_baseline
 from scripts.static.jamsic_method import run_jamsic_baseline
 from scripts.context.bert_clustering import run_bert_baseline
 from scripts.utils import make_picture, make_html_picture
@@ -10,7 +11,7 @@ from scripts.utils import make_picture, make_html_picture
 
 def main():
     parser = argparse.ArgumentParser(description='Arguments for SEMCLUSTERS baselines')
-    parser.add_argument('method', type=str, help='Method type (birch / jamsic / naive)')
+    parser.add_argument('method', type=str, help='Method type (birch / jamsic / naive / egvi)')
     parser.add_argument('dataset', type=str, help='Path to dataset')
     parser.add_argument('--model', type=str, help='Path to model or name of huggingface BERT')
     parser.add_argument('--visualize', action='store_true', help='If passed returns the graph')
@@ -30,6 +31,8 @@ def main():
         out = run_birch_baseline(args.dataset, args.model)
     elif args.method == 'bert':
         out = run_bert_baseline(args.dataset, args.model)
+    elif args.method == 'egvi':
+        out = run_egvi_baseline(args.dataset, args.model)
     else:
         print(f"No such method: {args.method}", file=sys.stderr)
         exit(-1)

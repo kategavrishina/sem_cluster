@@ -19,13 +19,17 @@ def run_bert_baseline(path_to_dataset: str, model_name: str):
     ari = []
 
     for word in dataset['word'].unique():
-        part = dataset[dataset['word'] == word].copy()
-        part['vector'] = part.apply(return_bert_single_vec, model=model, tokenizer=tokenizer, device=device, axis=1)
-        # print(part['vector'], part['context'])
-        clst = KMeans(n_clusters=2, random_state=40).fit(preprocessing.normalize(list(part['vector'])))
-        part['predict_sense_id'] = clst.labels_
-        result = result.append(part)
-        ari.append(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']))
-        print(f"Word: {word}, ARI: {round(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']), 2)}")
+        try:
+            part = dataset[dataset['word'] == word].copy()
+            # print(part)
+            part['vector'] = part.apply(return_bert_single_vec, model=model, tokenizer=tokenizer, device=device, axis=1)
+            # print(part['vector'], part['context'])
+            clst = KMeans(n_clusters=2, random_state=40).fit(preprocessing.normalize(list(part['vector'])))
+            part['predict_sense_id'] = clst.labels_
+            result = result.append(part)
+            ari.append(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']))
+            print(f"Word: {word}, ARI: {round(adjusted_rand_score(part['predict_sense_id'], part['gold_sense_id']), 2)}")
+        except Exception as E:
+            print(word, E)
     print(f"Average ARI Bert clustering: {round(np.mean(ari), 2)}\n")
     return result
