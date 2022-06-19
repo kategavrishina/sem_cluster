@@ -100,7 +100,7 @@ def return_bert_single_vec(dframe, model, tokenizer, device):
                 prev_token = ""
                 word_embedding = []
         if len(word_embedding) == 0:
-            return np.zeros((1, 312))[0]
+            return np.zeros((1, 1024))[0]
     return word_embedding[0]
 
 
