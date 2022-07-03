@@ -56,6 +56,7 @@ def load_embedding(modelfile):
 
 def return_vec(string: str, model: gensim.models.KeyedVectors):
     vec = [0.0] * 300
+    # vec = np.zeros(300)
     length = 0
     for token in udpipe_preprocessor(string):
         if token.split('_')[0] not in russian_stops:
@@ -66,6 +67,7 @@ def return_vec(string: str, model: gensim.models.KeyedVectors):
         length += 1
     if np.isnan(np.array(vec) / length).any():
         # print(string)
+        # return np.zeros(300)
         return [0.0] * 300
     return list(np.array(vec) / length)
 

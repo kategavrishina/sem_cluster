@@ -17,7 +17,7 @@
 ``python main.py [наименование метода] [путь до датасета] --model [путь до модели]``
 
 Пример:
-``python main.py jamsic datasets/wiki-wiki/train.csv --model models/word2vec/model_wiki.bin --visualize``
+`` jamsic datasets/wiki-wiki/train.csv --model models/word2vec/model_wiki.bin --visualize``
 
 Доступные методы:
 - birch
