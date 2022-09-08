@@ -5,9 +5,8 @@
 3. Кластеризация статических эмбеддингов алгоритмом BIRCH
 4. Метод, основанный на подходе jamsic на соревановании RUSSE'2018
 5. KMeans кластеризация контекстных векторов модели BERT
-
-Будут добавлены:
-1. Свой смысл для каждой леммы
+6. Egvi на подготовленных sense inventories
+7. BERT + KMeans с числом значений слова от Egvi
 
 # Запуск
 Для установки пакетов:
@@ -89,6 +88,9 @@
 | ruwikiruscorpora-func_upos_skipgram_300_5_2019 | EGVI | 0.59 | замок | 0.82 |
 | ruwikiruscorpora-func_upos_skipgram_300_5_2019 | EGVI | 0.59 | лук | 0.43 |
 | ruwikiruscorpora-func_upos_skipgram_300_5_2019 | EGVI | 0.59 | бор | 0.51 |
+| sberbank-ai/sbert_large_nlu_ru | EGVI + BERT | 0.64 | замок | 0.96 |
+| sberbank-ai/sbert_large_nlu_ru | EGVI + BERT | 0.64 | лук | 0.73 |
+| sberbank-ai/sbert_large_nlu_ru | EGVI + BERT | 0.64 | бор | 0.22 |
 
 Для WSD – ARI и [Accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
 
